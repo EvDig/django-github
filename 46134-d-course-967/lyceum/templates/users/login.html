@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">Логин</h1>
+  {% include "includes/form.html" %}
+  <div align="center">
+    <a href="{% url 'users:password_reset' %}">Забыли пароль?</a>
+  </div>
+
+
+{% endblock %}

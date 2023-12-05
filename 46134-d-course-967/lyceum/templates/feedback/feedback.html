@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+  {% include "includes/messages.html" %}
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">Оставить отзыв</h1>
+
+  <form enctype="multipart/form-data" method="POST" style="text-align: center;">
+    {% csrf_token %}
+    <ul>
+      {{ feedback_form.as_ul }}
+    </ul>
+    <br>
+    <ul>
+      {{ personal_data_form.as_ul }}
+    </ul>
+    <br>
+    <ul>
+      {{ files_form.as_ul }}
+    </ul>
+
+    <input type="submit" value="Отправить">
+  </form>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<div style="padding-left:25px; border:solid white; border-radius: 15px; border-width: 2px;">
+    <h3>
+        <a href="{% url 'catalog:item' pk=item.id %}">{{ item.name }}</a>
+    </h3>
+    <p>
+        {{ item.text|safe|truncatewords_html:10 }}
+    </p>
+    <div>
+        {% for tag in item.tags.all %}
+            {{ tag.name }}
+        {% empty %}
+            ТЕГИ НЕ НАЙДЕНЫ
+        {% endfor %}
+    </div>
+    <a href="{% url 'statistic:rating_detail' pk=item.id %}">Оценки товара</a>
+</div>
+<br>

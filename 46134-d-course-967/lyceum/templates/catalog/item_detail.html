@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+  {% load thumbnail %}
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">{{ item.name }}</h1>
+  <h3 align="center">{{ item.category.name }}</h3>
+  <div align="center">
+    {% for tag in item.tags.all %}
+        {{ tag.name }}
+    {% empty %}
+        ТЕГИ НЕ НАЙДЕНЫ
+    {% endfor %}
+  </div>
+  <br>
+  <div align="center" style="margin-bottom:7px"><img src="{{ item.main_image.image.url }}" width="450" height="450" alt="NO MAIN IMAGE">
+      {% if item.main_image.image %}
+          <br>
+          <a class="btn btn-dark btn-outline-light download-link"
+          href="{% url 'download:load_image' item.main_image.image %}">Скачать картинку</a></div>
+      {% endif %}
+  <div align="center" style="margin-bottom:30px">
+      {% for image in item.images.all %}
+            <img src="{{ image.image_gallery.url }}" width="150" height="150" alt="EMPTY SECONDARY IMAGE">
+            <a class="btn btn-dark btn-outline-light download-link"
+            href="{% url 'download:load_image' image.image_gallery %}">Скачать картинку</a>
+            {% empty %}
+            ВТОРИЧНЫЕ ИЗОБРАЖЕНИЯ НЕ НАЙДЕНЫ
+      {% endfor %}
+  </div>
+  <div style="padding-left:100px; padding-right:100px">
+      {{ item.text|safe }}
+  </div>
+
+  <h2 align="left">Рейтинг</h2>
+  <p>Средний {{ avg_rating }} | {{ rating_count }} Всего оценок</p>
+  {% if user.is_authenticated %}
+    <h2 align="left">Оцените товар</h2>
+    {% include "includes/form.html" %}
+  {% endif %}
+
+
+{% endblock %}

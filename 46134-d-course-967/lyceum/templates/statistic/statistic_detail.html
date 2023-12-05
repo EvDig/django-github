@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <h1 align="center">Статистика оценок пользователя</h1>
+    <br>
+    <div align="center">
+
+        {% for item in best_and_worst_rating_items %}
+
+            {% if forloop.first %}
+                <h3>Лучший товар</h3>
+                <p>Оценка: {{ best_rating }}</p>
+                {% include "includes/item_card.html" %}<br>
+                <h3>Худший товар</h3>
+                <p>Оценка: {{ worst_rating }}</p>
+
+            {% endif %}
+            {% if forloop.last %}
+
+                {% include "includes/item_card.html" %}<br>
+
+            {% endif %}
+
+            {% empty %}
+                <h2>ОЦЕНКИ НЕ НАЙДЕНЫ</h2>
+        {% endfor %}
+
+        <h3>Средняя оценка: {{ avg_rating }}</h3>
+        <h3>Всего оценок: {{ ratings_count }}</h3>
+        <a href="{% url 'statistic:list' %}">Список оцененных товаров</a>
+    </div>
+
+{% endblock %}

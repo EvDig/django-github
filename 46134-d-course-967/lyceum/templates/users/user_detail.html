@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+  {% load thumbnail %}
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">Информация о пользователе по его id</h1>
+  <br>
+  <h1 align="center">{{ user.email }}</h1>
+  <h3 align="center">
+
+    {% if user.first_name %}{{ user.first_name }}
+    {% else %}<span style="font-family:Arial; font-weight: lighter">неуказано</span>{% endif %}
+
+    {% if user.last_name %}{{ user.last_name }}
+    {% else %}<span style="font-family:Arial; font-weight: lighter">неуказано</span>{% endif %}</h3>
+
+  <h3 align="center">{{ user.user_profile.birthday }} {{ user.user_profile.coffee_count }}</h3>
+
+<div align="center" style="margin-bottom:7px">
+  {% if user.user_profile.image %}
+  <img src="{{ user.user_profile.image.url }}" width="450" height="450" alt="NO PROFILE PICTURE FOUND">
+  {% else %}
+  <p>НЕ НАЙДЕНО ФОТО ПРОФИЛЯ</p>
+  {% endif %}
+</div>
+
+
+{% endblock %}

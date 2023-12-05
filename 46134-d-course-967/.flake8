@@ -1,0 +1,7 @@
+[flake8]
+    exclude = __pycache__,venv,.venv, migrations
+    application_import_names = core, catalog, homepage, lyceum, about, download, feedback, users, rating, statistic
+    max-line-length = 79
+    inline-quotes = "
+    max-complexity = 10
+    import-order-style = google

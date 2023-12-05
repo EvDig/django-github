@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <h1 align="center">Все оценённые пользователем товары</h1>
+    <br>
+    {% for item in eval_items %}
+        {% include "includes/item_card.html" %}
+    {% endfor %}
+{% endblock %}

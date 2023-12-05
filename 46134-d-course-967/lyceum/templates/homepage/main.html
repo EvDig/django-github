@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+  {% load thumbnail %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">Главная</h1>
+  {% for item in items %}
+    {{ item.category.name }}
+    {% include "includes/item_card.html" %}
+  {% empty %}
+    <p>ТОВАРЫ НЕ НАЙДЕНЫ</p>
+  {% endfor %}
+
+{% endblock %}

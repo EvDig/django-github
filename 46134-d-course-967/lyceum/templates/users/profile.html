@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">Мой профиль</h1>
+
+  <form enctype="multipart/form-data" method="POST" style="text-align: center;">
+    {% csrf_token %}
+    <ul>
+      {{ profile_form.as_ul }}
+    </ul>
+    <br>
+    <ul>
+      {{ user_form.as_ul }}
+    </ul>
+
+    <div>
+      <a class="btn btn-dark" href="{% url 'homepage:coffee' %}">Выпить кофе</a>
+      <input type="submit" value="Сохранить">
+    </div>
+
+  </form>
+
+
+{% endblock %}

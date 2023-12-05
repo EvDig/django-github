@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+  {% load thumbnail %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">Список пользователей</h1>
+
+  {% for user in users %}
+    {% include "includes/user_card.html" %}
+  {% empty %}
+    <p>ПОЛЬЗОВАТЕЛИ НЕ НАЙДЕНЫ</p>
+  {% endfor %}
+
+{% endblock %}

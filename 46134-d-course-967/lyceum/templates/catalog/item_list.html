@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+  {% load thumbnail %}
+  {% with request.resolver_match.view_name as view_name %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+    {% if view_name == "catalog:item_list" %}
+      <h1 align="center">Список Товаров</h1>
+    {% endif %}
+
+    {% if view_name == "catalog:new" %}
+      <h1 align="center">Новинки</h1>
+    {% endif %}
+
+    {% if view_name == "catalog:friday" %}
+      <h1 align="center">Пятница</h1>
+    {% endif %}
+
+    {% if view_name == "catalog:unverified" %}
+      <h1 align="center">Непроверенное</h1>
+    {% endif %}
+
+    {% for item in items %}
+
+      {% ifchanged %}
+        <h1>{{ item.category.name }}</h1>
+      {% endifchanged %}
+      {% include "includes/item_card.html" %}
+
+      {% empty %}
+        <p>ТОВАРЫ НЕ НАЙДЕНЫ</p>
+    {% endfor %}
+
+  {% endwith %}
+
+{% endblock %}

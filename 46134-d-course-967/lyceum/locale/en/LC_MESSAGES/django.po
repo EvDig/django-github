@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-24 18:21+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\lyceum\settings.py:140
+msgid "Russian"
+msgstr "Russian"
+
+#: .\lyceum\settings.py:141
+msgid "English"
+msgstr "English"
+
+#: .\templates\includes\header.html:8
+msgid "Cats"
+msgstr "Cats (silly)"
+
+#: .\templates\includes\header.html:13
+msgid "Main"
+msgstr "Main"
+
+#: .\templates\includes\header.html:16
+msgid "About"
+msgstr "About us"
+
+#: .\templates\includes\header.html:19
+msgid "Catalog"
+msgstr "Product catalog"
+
+#: .\templates\includes\header.html:22
+msgid "Feedback"
+msgstr "Send feedback"
+
+#: .\templates\includes\header.html:26
+msgid "Login"
+msgstr "Login"
+
+#: .\templates\includes\header.html:29
+msgid "Signup"
+msgstr "Sign up"
+
+#: .\templates\includes\header.html:34
+msgid "Logout"
+msgstr "Logout"
+
+#: .\templates\includes\header.html:37
+msgid "Ratings"
+msgstr "Ratings"
+
+#: .\templates\includes\header.html:42
+msgid "Admin"
+msgstr "Admin page"

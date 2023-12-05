@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+  <h1 align="center">Эхо</h1>
+
+  <form method="POST" action="{% url 'homepage:echo_submit' %}" style="text-align: center;">
+    {% csrf_token %}
+    <ul>
+      {{ form.as_ul }}
+    </ul>
+    <input type="submit" value="Отправить">
+  </form>
+
+{% endblock %}

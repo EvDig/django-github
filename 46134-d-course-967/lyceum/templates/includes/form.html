@@ -1,0 +1,5 @@
+<form method="post" action="" style="text-align: center;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Готово</button>
+</form>

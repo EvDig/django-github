@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+  <h1 align="center">Пользователь активирован</h1>
+  <div align="center"><a href="{% url 'homepage:home' %}">На главную</a></div>
+
+
+{% endblock %}
